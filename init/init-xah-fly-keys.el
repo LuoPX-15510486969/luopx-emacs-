@@ -1,5 +1,5 @@
+(setq xah-fly-use-control-key nil)
 (require 'xah-fly-keys)
-
 (xah-fly-keys-set-layout "qwerty") ; required if you use qwerty
 
 ;; possible layout values:

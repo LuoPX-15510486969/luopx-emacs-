@@ -127,6 +127,8 @@
 ;; 不要自动备份，auto-save.el 就挺好用
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-;;(setq inhibit-message t)
+(setq inhibit-splash-screen t)
+(setq inhibit-message t)
+(blink-cursor-mode 0)
 (provide 'init-startup)
 ;;; init-startup.el ends here
