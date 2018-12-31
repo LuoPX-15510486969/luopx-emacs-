@@ -156,7 +156,7 @@
    ("M-S" . company-filter-candidates)
    ("M-n" . company-select-next)
    ("M-p" . company-select-previous)
-   ("M-i" . yas-expand)
+   ("C-i" . yas-expand)
    )
  company-active-map)
 

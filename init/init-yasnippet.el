@@ -2,7 +2,7 @@
 
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"
-	"~/luopx-emacs-one-by-one/config/yasnippet-snippets/snippets/"))
+	"d:/emacs-no-git/packages/yasnippet-snippets/snippets/"))
 
 (yas-global-mode 1)
 

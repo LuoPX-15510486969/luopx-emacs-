@@ -122,6 +122,8 @@
 (server-start)                  ;为emacsclient准备使用场景，比如git
 
 
+
+
 (require 'restart-emacs)
 
 ;; 不要自动备份，auto-save.el 就挺好用

@@ -201,4 +201,5 @@
    )
  dired-mode-map
  )
+(add-hook 'dired-mode-hook 'xah-fly-insert-mode-activate)
 (provide 'init-dired)

@@ -26,6 +26,7 @@
                'lua-mode-hook
                'swift-mode-hook
                'minibuffer-inactive-mode-hook
+	       'xah-elisp-mode-hook
                ))
   (add-hook hook '(lambda () (awesome-pair-mode 1))))
 ;; (define-key awesome-pair-mode-map (kbd "(") 'awesome-pair-open-round)

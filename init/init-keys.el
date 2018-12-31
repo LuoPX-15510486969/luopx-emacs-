@@ -13,7 +13,7 @@
    ("M-j" . awesome-tab-forward-tab)
    ("M-k" . awesome-tab-backward-tab)
    ("M-l" . awesome-tab-backward-group)
-   ("M-;" . awesome-tab-forward-group)
+   ("M-i" . awesome-tab-forward-group)
    ("C-x d" . awesome-tab-kill-other-buffers-in-current-group)
    ("C-x D" . awesome-tab-kill-all-buffers-in-current-group)
    ("C-x k" . kill-this-buffer)
@@ -29,6 +29,7 @@
 
 ;;awesome-tab
 ;;; ### Awesome-Pair ###
+
 ;;; --- 结构化编程
 (lazy-unset-key
  '("M-J" "M-r" "M-s" "M-;" "C-M-f" "C-M-b" "M-)" )
@@ -68,7 +69,8 @@
    ("C-x X" . delete-window)
    ("C-x x" . delete-other-windows)
    ("C-x o" . other-window)
-   ("C-v" . scroll-other-window)
+   ("C-v" . scroll-up-command)
+   ("M-v" . scroll-down-command)
    )
  )
 ;;mark-set
