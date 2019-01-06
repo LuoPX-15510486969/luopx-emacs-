@@ -87,10 +87,19 @@
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Thing-Edit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defvar one-key-menu-thing-edit-alist nil
-  "The `one-key' menu alist for THING-EDIT.")
 
-(setq one-key-menu-thing-edit-alist
+(defvar one-key-menu-copy-thing-edit-alist nil
+  "The `one-key' menu alist for COPY-THING-EDIT.")
+
+(defvar one-key-menu-cut-thing-edit-alist nil
+  "The `one-key' menu alist for CUT-THING-EDIT.")
+
+(defvar one-key-menu-replace-thing-edit-alist nil
+  "The `one-key' menu alist for REPLACE-THING-EDIT.")
+
+
+
+(setq one-key-menu-copy-thing-edit-alist
       '(
         ;; Copy.
         (("w" . "Copy Word") . thing-copy-word)
@@ -109,31 +118,72 @@
         (("l" . "Copy Line") . thing-copy-line)
         (("a" . "Copy To Line Begin") . thing-copy-to-line-beginning)
         (("e" . "Copy To Line End") . thing-copy-to-line-end)
-        ;; Replace. 
-        (("W" . "Replace Word") . thing-replace-word)
-        (("S" . "Replace Symbol") . thing-replace-symbol)
-        (("M" . "Replace Email") . thing-replace-email)
-        (("F" . "Replace Filename") . thing-replace-filename)
-        (("U" . "Replace URL") . thing-replace-url)
-        (("X" . "Replace Sexp") . thing-replace-sexp)
-        (("G" . "Replace Page") . thing-replace-page)
-        (("T" . "Replace Sentence") . thing-replace-sentence)
-        (("O" . "Replace Whitespace") . thing-replace-whitespace)
-        (("I" . "Replace List") . thing-replace-list)
-        (("C" . "Replace Comment") . thing-replace-comment)
-        (("H" . "Replace Function") . thing-replace-defun)
-        (("P" . "Replace Parentheses") . thing-replace-parentheses)
-        (("L" . "Replace Line") . thing-replace-line)
-        (("A" . "Replace To Line Begin") . thing-replace-to-line-beginning)
-        (("E" . "Replace To Line End") . thing-replace-to-line-end)
         ))
 
-(defun one-key-menu-thing-edit ()
+(setq one-key-menu-replace-thing-edit-alist
+      '(
+        ;; Replace. 
+        (("w" . "Replace Word") . thing-replace-word)
+        (("s" . "Replace Symbol") . thing-replace-symbol)
+        (("m" . "Replace Email") . thing-replace-email)
+        (("f" . "Replace Filename") . thing-replace-filename)
+        (("u" . "Replace URL") . thing-replace-url)
+        (("x" . "Replace Sexp") . thing-replace-sexp)
+        (("g" . "Replace Page") . thing-replace-page)
+        (("t" . "Replace Sentence") . thing-replace-sentence)
+        (("o" . "Replace Whitespace") . thing-replace-whitespace)
+        (("i" . "Replace List") . thing-replace-list)
+        (("c" . "Replace Comment") . thing-replace-comment)
+        (("h" . "Replace Function") . thing-replace-defun)
+        (("p" . "Replace Parentheses") . thing-replace-parentheses)
+        (("l" . "Replace Line") . thing-replace-line)
+        (("a" . "Replace To Line Begin") . thing-replace-to-line-beginning)
+        (("e" . "Replace To Line End") . thing-replace-to-line-end)
+        ))
+
+(setq one-key-menu-cut-thing-edit-alist
+      '(
+        ;; Cut.
+        (("w" . "Cut Word") . thing-cut-word)
+        (("s" . "Cut Symbol") . thing-cut-symbol)
+        (("m" . "Cut Email") . thing-cut-email)
+        (("f" . "Cut Filename") . thing-cut-filename)
+        (("u" . "Cut URL") . thing-cut-url)
+        (("x" . "Cut Sexp") . thing-cut-sexp)
+        (("g" . "Cut Page") . thing-cut-page)
+        (("t" . "Cut Sentence") . thing-cut-sentence)
+        (("o" . "Cut Whitespace") . thing-cut-whitespace)
+        (("i" . "Cut List") . thing-cut-list)
+        (("c" . "Cut Comment") . thing-cut-comment)
+        (("h" . "Cut Function") . thing-cut-defun)
+        (("p" . "Cut Parentheses") . thing-cut-parentheses)
+        (("l" . "Cut Line") . thing-cut-line)
+        (("a" . "Cut To Line Begin") . thing-cut-to-line-beginning)
+        (("e" . "Cut To Line End") . thing-cut-to-line-end)
+        ))
+
+
+
+(defun one-key-menu-copy-thing-edit ()
   "The `one-key' menu for THING-EDIT."
   (interactive)
-  (one-key-menu "THING-EDIT" one-key-menu-thing-edit-alist t))
+  (one-key-menu "COPY-THING-EDIT" one-key-menu-copy-thing-edit-alist t))
 
-(lazy-set-key '(("<f2>" . one-key-menu-thing-edit)))
+(defun one-key-menu-cut-thing-edit ()
+  "The `one-key' menu for THING-EDIT."
+  (interactive)
+  (one-key-menu "CUT-THING-EDIT" one-key-menu-cut-thing-edit-alist t))
+
+(defun one-key-menu-replace-thing-edit ()
+  "The `one-key' menu for THING-EDIT."
+  (interactive)
+  (one-key-menu "REPLACE-THING-EDIT" one-key-menu-replace-thing-edit-alist t))
+
+(lazy-set-key '(("<f2>" . one-key-menu-copy-thing-edit)))
+
+(lazy-set-key '(("<f3>" . one-key-menu-cut-thing-edit)))
+
+(lazy-set-key '(("<f4>" . one-key-menu-replace-thing-edit)))
 
 (provide 'init-thing-edit)
 

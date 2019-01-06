@@ -21,5 +21,25 @@
 
 (define-key key-translation-map (kbd "ESC") (kbd "C-g")) 
 (xah-fly-keys 1)
+
+;; ;; thing-edit shortcut
+;; (xah-fly--define-keys
+;;  ;; create a keymap my-keymap
+;;  (define-prefix-command 'thing-copy-keymap)
+;;  '(
+;;    ("w" . thing-copy-word)
+;;    ;;
+;;    ))
+
+;; ;; make xah-fly-keys 【leader 8】 as prefix for my-keymap
+;; (xah-fly--define-keys
+;;  (define-prefix-command 'xah-fly-leader-key-map)
+;;  '(
+;;    ("c" . thing-copy-keymap)
+;;    ;;
+;;    ))
+
+;; all letters are dvorak. They get translated to whatever your xah-fly-keys-set-layout is set to
+
 (provide 'init-xah-fly-keys)
 

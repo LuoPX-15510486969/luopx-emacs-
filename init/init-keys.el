@@ -1,7 +1,7 @@
 (lazy-set-key
  '(
    ("<f5>" . restart-emacs)
-   ("<f4>" . basic-save-buffer)
+   ("<f6>" . basic-save-buffer)
    ))
 
 ;; awesome-tab
@@ -92,6 +92,10 @@
 
    ))
 
-
+;; xah useful command
+(lazy-set-key
+ '(
+   ("C-1" . xah-cycle-hyphen-underscore-space)
+   ("C-2" . xah-insert-paren)))
 
 (provide 'init-keys)
