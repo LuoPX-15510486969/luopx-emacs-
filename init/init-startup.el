@@ -130,7 +130,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq inhibit-splash-screen t)
-(setq inhibit-message t)
+;;(setq inhibit-message t)
 (blink-cursor-mode 0)
 (provide 'init-startup)
 ;;; init-startup.el ends here

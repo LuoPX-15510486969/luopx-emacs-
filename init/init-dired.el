@@ -182,19 +182,34 @@
 ;;(add-hook 'xah-fly-insert-mode-activate-hook 'my-bindkey-xfk-insert-mode)
 ;; (add-hook 'xah-fly-command-mode-activate-hook 'my-bindkey-xfk-command-mode)
 
+
+(defvar luo-dired-reuse-dired-buffer nil
+  "If non-nil, reuses one dired buffer for navigation.")
+
+(defun luo-dired/open ()
+  "enter directory or open file"
+  (interactive)
+  (if luo-dired-reuse-dired-buffer
+                      (dired-find-alternate-file)
+                    (dired-find-file)))
+
 (lazy-set-key
  '(
    ("k" . luo-dired/move-down)            ;下一个子目录
    ("i" . luo-dired/move-up)            ;上一个子目录
    ("j" . luo-dired/up-directory)           ;下一个目录
+   ("l" . luo-dired/open)
    ("c" . dired-ranger-copy)           ;上一个目录
    ("v" . dired-ranger-paste)          
    ("x" . dired-ranger-move)     
    ("b" . dired-ranger-bookmark) 
-   ("f" . dired-ranger-bookmark-visit) 
+   ("B" . dired-ranger-bookmark-visit) 
+   ("f" . counsel-find-file)
    ("a" . dired-back-to-start-of-files)
-   ("n" . dired-next-subdir)        
-   ("p" . dired-prev-subdir) ;
+   ("n" . dired-narrow) 
+   ("N" . dired-narrow-fuzzy)
+   ("h" . dired-prev-subdir) ;
+   (";" . dired-next-subdir) ;
    ("t" . luo-dired/dotfiles-toggle)
    ("0" . luo-dired/back-to-top)    
 
@@ -202,4 +217,5 @@
  dired-mode-map
  )
 (add-hook 'dired-mode-hook 'xah-fly-insert-mode-activate)
+(add-hook 'dired-mode-hook 'luo-dired/dired-setup)
 (provide 'init-dired)
