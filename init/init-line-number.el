@@ -88,6 +88,7 @@
                'c-mode-common-hook
                'c-mode-hook
                'emacs-lisp-mode-hook
+	       'xah-elisp-mode-hook
                'lisp-interaction-mode-hook
                'lisp-mode-hook
                'emms-playlist-mode-hook
