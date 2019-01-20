@@ -89,6 +89,7 @@
                     ("\\.markdown" . markdown-mode)
                     ("\\.md" . markdown-mode)
 		    ("\\.el\\'" . xah-elisp-mode)
+		    ("\\.ahk\\'" . xahk-mode)
                     ("\\.coffee$" . coffee-mode)
                     ("\\.iced$" . coffee-mode)
                     ("Cakefile" . coffee-mode)
